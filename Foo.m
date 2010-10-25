@@ -13,6 +13,9 @@
 - (IBAction) seed: (id) sender {
 	// Seed the random number generator with the time
 	srandom(time(NULL));
+	
+	NSLog(@"Seeded random number generator with the time");
+	
 	[textField setStringValue: @"Generator seeded"];
 }
 
@@ -21,7 +24,7 @@
 	int generated;
 	generated = (random() % 100) + 1;
 	
-	NSLog(@"generated = %d", generated);
+	NSLog(@"Generated = %d", generated);
 	
 	// Ask the text field to change what it is displaying
 	[textField setIntValue: generated];
